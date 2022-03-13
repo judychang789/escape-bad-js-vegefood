@@ -1,13 +1,10 @@
 // TODO: 修正 ESLint 錯誤、補上分號、前輩說要改單引號 QQ
 const url = 'https://hexschool.github.io/js-filter-data/data.json';
-
 const table = document.querySelector('.table-content');
-let showData = [];
-
+let data = [];
+let showData;
 let category = '';
 const filter = document.querySelector('.filter');
-
-let data = [];
 
 // this.$axios.get(url)
 //   .then(function (res) {
@@ -42,7 +39,7 @@ function filterCategory(e) {
 
 filter.addEventListener('click', filterCategory);
 
-this.$axios.get(url)
+this.axios.get(url)
   .then((res) => {
     data = res.data.filter((a) => a.作物名稱);
     renderData(data);
